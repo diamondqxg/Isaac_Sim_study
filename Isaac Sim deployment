@@ -1,0 +1,41 @@
+Intro
+
+I heard such tool introduced by Nvidia from Shi fan. And also saw some tips about this from Yang shuo. I am not that concerned about the concept about omniverse. However, the idea that created a realistic simulation platform to traning MLR(machine learning robotics) is truly aggressive and attractive.
+
+I already had an ASUS laptop with Corei7-10875H and GeForce RTX 2070 SUPER,16GB RAM, 512GB SSD. Considering further requirements, I got another ASUS laptop with Corei7-11370H, GeForce RTX 3060, 16GB RAM, 1TB SSD.
+
+The lower spect laptop meets the minimum requirements of Isaac sim, so try deploy workstation on this one.
+
+1. Preparation
+
+ASUS laptop BIOS has special setting and have to be care of this step.
+
+(1) There is only one disc and already installed windows10, and I want to keep dual boot. Therefore first is to make spare volumn portion on the disc, somehow I can only create one with 92GB, while the free space is about 300GB. So created the 92GB logic portion
+
+(2) Use empty Usb disk and Ubutntu 18.04(Isaac Sim required version) os file, and tools from internet created the liveUSB for installing ubuntu.
+
+(3) Need to set SATA mode from RST to AHCI.(but when I want to boot windows I have to swich SATA mode back to RST, it seems no good way to resolve this issue), inplug liveUSB, also need calbe usb mouse(keyboard and touchboard could out of function). follow the instruction to install. there has step to setup the disc portion, try assgin 20GB for /, 8GB for swap area, rest for /home.(refer to recent online blog)
+
+(4) After installed ubuntu 18.04. maybe something weird about wifi or other functions, can try update.
+
+(5) Follow instruction on Nvidia Isaac Sim page
+
+(6) One issue could be Nouveau kernel disable issue, try https://linuxconfig.org/how-to-disable-nouveau-nvidia-driver-on-ubuntu-18-04-bionic-beaver-linux to disable it.
+
+(7) Another is installing Nvidia driver, "installing dkms kernel module" stopped at 5% issue. try https://qiita.com/cateiru/items/475eb9a1cae77bb05ba9, means disable secure boot in BIOS setting, then it will finished installing.
+
+Once finished installing Isaac Sim Driver and Isaac Sim Container, the preparation is done.
+
+2. Workstation deployment
+
+(1) Downlaod and install Isaac Sim on Omniverse Launcher
+
+(2) start launcher, it is a linux AppImage file, download Isaac Sim in exchange lib.
+
+(3) Also need to initialize Nucleus on omniverse launcher.
+
+(4) can try nvidia-smi command before launch isaac sim, if it does not work, maybe need re-install driver
+
+(5) If successful launched, it will pop-up the Interface. Also we should be able to connect to localhost Nucleus server, then upload the assets files(samples)
+
+(6) Then it should be able to see sub-folders of the samples modules in "content" tab
