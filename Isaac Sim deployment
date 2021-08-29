@@ -26,6 +26,10 @@ ASUS laptop BIOS has special setting and have to be care of this step.
 
 Once finished installing Isaac Sim Driver and Isaac Sim Container, the preparation is done.
 
+IMPORTANT:To run Isaac Sim successfully on Omniverse Launcher, make sure you can see nvidia driver running when you run command $ nvidia-smi
+For some laptop, need to disable secure boot(but need to make sure you can login ubuntu), remove all exist nvidia & cuba driver, re-install the corresponding driver of the graphic board.
+
+
 2. Workstation deployment
 
 (1) Downlaod and install Isaac Sim on Omniverse Launcher
